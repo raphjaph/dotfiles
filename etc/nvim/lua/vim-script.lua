@@ -2,7 +2,7 @@ require('mappings')
 require('plugins')
 
 vim.api.nvim_exec(
-[[
+  [[
 """"""""""""""""""""""""""""""""""""""""""""""
 "       Airlines Status Bar and Tabs         "
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -94,5 +94,6 @@ nnoremap _ :call QuickfixNext(1)<cr>|                  " go to previous error
 nnoremap <leader>qc :call setqflist([])<cr>|           " clear quickfix list
 
 set errorformat   =%f:%l:%c:%m           " set errorformat
-]]
-  , false)
+]],
+  false
+)

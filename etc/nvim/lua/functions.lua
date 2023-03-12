@@ -16,17 +16,17 @@ end
 -- toggle completion stuff
 vim.g.cmp_toggle_flag = false -- initialize
 local normal_buftype = function()
-  return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+  return vim.api.nvim_buf_get_option(0, 'buftype') ~= 'prompt'
 end
 
 function toggle_completion()
-  local ok, cmp = pcall(require, "cmp")
+  local ok, cmp = pcall(require, 'cmp')
   if ok then
     local next_cmp_toggle_flag = not vim.g.cmp_toggle_flag
     if next_cmp_toggle_flag then
-      print("completion on")
+      print('completion on')
     else
-      print("completion off")
+      print('completion off')
     end
     cmp.setup({
       enabled = function()
@@ -39,6 +39,6 @@ function toggle_completion()
       end,
     })
   else
-    print("completion not available")
+    print('completion not available')
   end
 end

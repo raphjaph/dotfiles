@@ -1,13 +1,13 @@
 require('util')
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
     lazypath,
   })
 end
@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 opt('g', 'mapleader', ' ')
 
-require("lazy").setup({
+require('lazy').setup({
   -- Telescope
   {
     'nvim-telescope/telescope.nvim',
@@ -72,7 +72,7 @@ require("lazy").setup({
     ft = 'markdown',
     build = 'cargo build --release --locked',
   },
-  {'plasticboy/vim-markdown', ft = 'markdown'},
+  { 'plasticboy/vim-markdown', ft = 'markdown' },
 
   -- Pretty and lightweight status and tab lines
   -- 'vim-airline/vim-airline',
@@ -86,11 +86,8 @@ require("lazy").setup({
   -- {'nvim-lualine/lualine.nvim', dependencies = 'kyazdani42/nvim-web-devicons'},
   'nvim-lualine/lualine.nvim',
   'arkav/lualine-lsp-progress',
-  {'romgrk/barbar.nvim', dependencies = 'nvim-tree/nvim-web-devicons'}, 
-
+  { 'romgrk/barbar.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
 })
-
-
 
 -- Snippets
 --'SirVer/ultisnips',

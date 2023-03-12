@@ -12,11 +12,11 @@ map(
 map('n', '<leader>gr', '<cmd>Telescope live_grep<cr>')
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
 
-vim.diagnostic.config {
+vim.diagnostic.config({
   virtual_text = false,
   signs = true,
   underline = true,
-}
+})
 
 map('n', '<SPACE>ee', '<CMD>lua vim.diagnostic.open_float()<CR>')
 map('n', '[d', '<CMD>lua vim.diagnostic.goto_prev()<CR>')
@@ -40,8 +40,6 @@ map('n', '<C-p>', '<CMD>BufferPrev<CR>')
 map('n', '<LEADER>bb', '<CMD>BufferOrderByBufferNumber<CR>')
 map('n', '<LEADER>bd', '<CMD>BufferOrderByDirectory<CR>')
 map('n', '<LEADER>bl', '<CMD>BufferOrderByLanguage<CR>')
-
-
 
 --map('n', '<esc>', "<cmd>noh<return><esc>", opts)
 --map('n', '<esc>^[', "<esc>^[", opts)

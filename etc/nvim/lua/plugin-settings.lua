@@ -2,7 +2,7 @@ require('plugins')
 require('util')
 
 -- ==============================================================================
--- Telescope                                                                  
+-- Telescope
 -- ==============================================================================
 
 local telescope = require('telescope')
@@ -73,27 +73,27 @@ require('nvim-treesitter.configs').setup({
   },
 
   indent = {
-    enable = true
+    enable = true,
   },
 
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "<cr>",
-      node_incremental = "<cr>",
-      scope_incremental = "<tab>",
-      node_decremental = "<bs>",
+      init_selection = '<cr>',
+      node_incremental = '<cr>',
+      scope_incremental = '<tab>',
+      node_decremental = '<bs>',
     },
   },
 
   additional_vim_regex_highlighting = false,
 })
 
--- Setup  treesitter for just 
+-- Setup  treesitter for just
 require('tree-sitter-just').setup({})
 
 -- ==============================================================================
--- LSP                                                                
+-- LSP
 -- ==============================================================================
 
 local lsp = require('lspconfig')
@@ -129,11 +129,10 @@ for _, server in ipairs(servers) do
   })
 end
 
-
 -- ==============================================================================
--- LSP Autocomplete (nvim-cmp)   
+-- LSP Autocomplete (nvim-cmp)
 -- ==============================================================================
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 local cmp = require('cmp')
 
@@ -169,13 +168,12 @@ cmp.setup({
         end
       end,
     }),
-
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
   }, {
     { name = 'buffer' },
-  })
+  }),
 })
 
 cmp.setup.filetype('gitcommit', {
@@ -183,14 +181,14 @@ cmp.setup.filetype('gitcommit', {
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
   }, {
     { name = 'buffer' },
-  })
+  }),
 })
 
 cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer' }
-  }
+    { name = 'buffer' },
+  },
 })
 
 -- ==============================================================================
@@ -204,9 +202,9 @@ require('bufferline').setup({
   closable = true,
   clickable = true,
   diagnostics = {
-    {enabled = true},
+    { enabled = true },
   },
-  hide = {extensions = false, inactive = false},
+  hide = { extensions = false, inactive = false },
   highlight_alternate = false,
   highlight_visible = false,
   icons = 'numbers',
@@ -229,9 +227,8 @@ require('lualine').setup({
   },
 })
 
-
 -- ==============================================================================
--- Markdown Composer                                                                
+-- Markdown Composer
 -- ==============================================================================
 
 vim.g.markdown_composer_autostart = 0
@@ -242,9 +239,8 @@ vim.g.vim_markdown_conceal = 0
 vim.g.vim_markdown_conceal_code_blocks = 0
 vim.g.vim_markdown_new_list_item_indent = 0
 
-
 -- ==============================================================================
--- Netrw                                                                
+-- Netrw
 -- ==============================================================================
 
 vim.g.netrw_banner = 0
@@ -254,17 +250,15 @@ vim.g.netrw_altv = 1
 vim.g.netrw_winsize = 20
 map('n', '<F3>', '<CMD>Lexplore<CR>')
 
-
 -- =============================================================================
 -- Miscellaneous
 -- =============================================================================
 
 require('nvim_comment').setup()
-vim.keymap.set('n', '<C-c>', "<CMD>CommentToggle<CR>", opts)
+vim.keymap.set('n', '<C-c>', '<CMD>CommentToggle<CR>', opts)
 
 --g.UltiSnipsExpandTrigger = '<tab>'
 --g.UltiSnipsJumpBackwardTrigger = '<c-z>'
 --vim.g.UltiSnipsJumpForwardTrigger = '<c-b>'
 
 --vim.g.rustfmt_autosave = 0
-
