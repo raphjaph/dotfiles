@@ -1,0 +1,24 @@
+# theme = "catppuccin_mocha"
+theme = "monokai_pro_spectrum"
+# theme = "monokai_pro"
+# theme = "gruvbox"
+# theme = "bogster"
+
+[editor]
+line-number = "absolute"
+scrolloff = 5
+cursorline = false
+
+[editor.statusline]
+left = ["file-name", "spacer", "spinner"]
+center = []
+right = ["diagnostics", "position", "spacer", "position-percentage"]
+
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.file-picker]
+hidden = true

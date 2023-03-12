@@ -1,0 +1,75 @@
+"set number                      "Line numbers are good
+"set showcmd                     "Show incomplete cmds down the bottom
+"set showmode                    "Show current mode down the bottom
+"
+"" no idea what these do; from my old vimrc
+"set ai
+"set hlsearch
+"set ruler
+"highlight Comment ctermfg=green
+"
+"set termguicolors
+"
+"set expandtab
+"set smarttab
+"set shiftwidth=4
+"set tabstop=4
+"
+"filetype plugin on
+"filetype indent on
+"
+"" if file is changed from different program
+"set autoread
+"
+"syntax enable
+"
+"set noswapfile
+"
+"set clipboard=unnamed
+"
+"filetype plugin indent on
+"syntax on
+"
+"" enables scrolling in vim in tmux
+"set mouse=a
+
+" Options
+set background=dark
+set clipboard=unnamedplus
+set completeopt=noinsert,menuone,noselect
+set cursorline
+set hidden
+set inccommand=split
+set mouse=a
+set number
+"set relativenumber
+set splitbelow splitright
+set title
+set ttimeoutlen=0
+set wildmenu
+set shell=/usr/local/bin/zsh
+
+" Tabs
+set expandtab
+set shiftwidth=2
+set tabstop=2
+
+" Syntax
+filetype plugin indent on
+syntax on
+
+" Colors
+set t_Co=256
+
+" File browser: open with vim . or :Ex
+let g:netrw_banner=0
+let g:netrw_liststyle=0
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_winsize=25
+let g:netrw_keepdir=0
+let g:netrw_localcopydircmd='cp -r'
+
+
+
+
