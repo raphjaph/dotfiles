@@ -1,59 +1,9 @@
 require('plugins')
 require('util')
 
-opt('o', 'termguicolors', true)
-vim.cmd('colorscheme PaperColor')
--- vim.cmd('colorscheme doom-one')
-vim.cmd('syntax on')
-
-opt('g', 'mapleader', ' ')
--- opt('o', 'autochdir', true)
-opt('o', 'autoindent', true)
-opt('o', 'autoread', true)
-opt('o', 'background', 'dark')
--- opt('o', 'backspace', 'indent,eol,start')
--- opt('o', 'backup', false)
--- opt('o', 'backupcopy', 'yes')
--- opt('o', 'belloff', 'all')
-opt('o', 'clipboard', 'unnamedplus')
--- opt('o', 'conceallevel', 2)
-opt('o', 'cursorline', true)
-opt('o', 'expandtab', true)
--- opt('o', 'foldenable', false)
-opt('o', 'foldexpr=nvim_treesitter#foldexpr()', true)
-opt('o', 'foldlevel', 99)
-opt('o', 'foldmethod', 'expr')
-opt('o', 'hidden', true)             
-opt('o', 'history=10000', true)       
-opt('o', 'ignorecase', true)            
-opt('o', 'incsearch', true)            
-opt('o', 'linebreak', true)               
-opt('o', 'ma', true)
-opt('o', 'mouse', 'a')                 
-opt('o', 'nofoldenable', true)
-opt('o', 'number', true)                
-opt('o', 'ruler', true)
-opt('o', 'scrolloff', 15)   
--- opt('o', 'shiftwidth', 2)
--- opt('o', 'shiftwidth', 2)
-opt('o', 'showcmd', true)
-opt('o', 'smartcase', true)
-opt('o', 'smartindent', true)
-opt('o', 'spelllang', 'en')
-opt('o', 'splitbelow', true)
--- opt('o', 'tabpagemax', 30)
--- opt('o', 'tabstop', 2)
--- opt('o', 'textwidth', 120)
-opt('o', 'title', true)
-opt('o', 'ttyfast', true)
-opt('o', 'undofile', true)
-opt('o', 'visualbell', true)
-opt('o', 'wildmode', 'longest,list,full')
--- opt('o', 'wrap', true)
-
--- ───────────────────────────────────────────────────────────────────────────-─╗
--- │ Telescope                                                                  │
--- ╚────────────────────────────────────────────────────────────────────────────│
+-- ==============================================================================
+-- Telescope                                                                  
+-- ==============================================================================
 
 local telescope = require('telescope')
 
@@ -87,7 +37,6 @@ telescope.setup({
     git_files = dropdown,
     lsp_references = ivy,
   },
--- telescope.setup({
   extensions = {
     fzf = {
       fuzzy = true,
@@ -98,9 +47,9 @@ telescope.setup({
   },
 })
 
--- ───────────────────────────────────────────────────────────────────────────-─╗
--- │ Treesitter                                                                 │
--- ╚────────────────────────────────────────────────────────────────────────────│
+-- ==============================================================================
+-- Treesitter
+-- ==============================================================================
 
 require('nvim-treesitter.configs').setup({
   ensure_installed = {
@@ -199,7 +148,7 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ["<C-k>"] = cmp.mapping({
+    ['<C-k>'] = cmp.mapping({
       i = function()
         if cmp.visible() then
           cmp.abort()
@@ -210,11 +159,11 @@ cmp.setup({
         end
       end,
     }),
-    ["<CR>"] = cmp.mapping({
+    ['<CR>'] = cmp.mapping({
       i = function(fallback)
         if cmp.visible() then
           cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-          require("toggle-completion").toggle_completion()
+          toggle_completion()
         else
           fallback()
         end
@@ -228,6 +177,7 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
+
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
@@ -267,9 +217,10 @@ require('bufferline').setup({
 
 require('lualine').setup({
   options = {
-    icons_enabled = false,
+    icons_enabled = true,
     lower = true,
-    theme = 'PaperColor',
+    -- theme = 'base16',
+    theme = 'gruvbox-material',
   },
   statusline = {
     lualine_a = { 'mode' },

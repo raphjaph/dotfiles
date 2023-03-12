@@ -74,16 +74,26 @@ require("lazy").setup({
   },
   {'plasticboy/vim-markdown', ft = 'markdown'},
 
+  -- Pretty and lightweight status and tab lines
+  -- 'vim-airline/vim-airline',
+  -- 'vim-airline/vim-airline-themes',
+
+  -- Git annoations
+  'tpope/vim-fugitive',
+  'airblade/vim-gitgutter',
+
   -- Statusline & Bufferline
   -- {'nvim-lualine/lualine.nvim', dependencies = 'kyazdani42/nvim-web-devicons'},
   'nvim-lualine/lualine.nvim',
   'arkav/lualine-lsp-progress',
   {'romgrk/barbar.nvim', dependencies = 'nvim-tree/nvim-web-devicons'}, 
 
-  -- Snippets
-  --'SirVer/ultisnips',
 })
 
+
+
+-- Snippets
+--'SirVer/ultisnips',
 --  --  Changes Vim working directory to project root
 --  use('airblade/vim-rooter')
 --

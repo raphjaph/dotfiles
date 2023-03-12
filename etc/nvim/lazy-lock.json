@@ -18,6 +18,8 @@
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "580b6c48651cabb63455e97d7e131ed557b8c7e2" },
   "telescope.nvim": { "branch": "master", "commit": "a3f17d3baf70df58b9d3544ea30abe52a7a832c2" },
   "tree-sitter-just": { "branch": "main", "commit": "8af0aab79854aaf25b620a52c39485849922f766" },
+  "vim-fugitive": { "branch": "master", "commit": "5b52a0f395065d6cb7b65a00a5e17eaf9ebd64d5" },
+  "vim-gitgutter": { "branch": "master", "commit": "edb607cc4b329099da825c028c53b1264dbd2350" },
   "vim-just": { "branch": "master", "commit": "838c9096d4c5d64d1000a6442a358746324c2123" },
   "vim-markdown": { "branch": "master", "commit": "5d3d1b6cbdc4be0b4c6105c1ab1f769d76d3c68f" },
   "vim-markdown-composer": { "branch": "master", "commit": "e6f99bc20cfcb277c63041b1f766e6d5940bcc76" },
