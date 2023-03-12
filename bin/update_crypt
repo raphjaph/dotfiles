@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# 1. open Veracrypt first and select the VeraCryptContainer in /Volumes/Backup
+# 2. Decrypt with password
+# 3. Run this script
+# 4. for complete synchronization add --delete option
+# 5. Dismount in veracrypt app
+
+# TODO: figure out how to do with command-line
+# veracrypt --mount /Volumes/Backup/VeraCryptContainer ~/Desktop/ --pim 0 --keyfiles "" --protect-hidden no --slot 1 --verbose
+
+set -eoxu pipefail
+# -e: exit immediately if non-zero exit code
+# -o: catches unset variables
+# -u pipefail: any error of any command will be seen 
+
+WORKDIR=/Users/raphael
+DEST=/Volumes/encrypted/gamma
+
+rsync -avzP $@ \
+  $WORKDIR/.gitconfig \
+  $WORKDIR/.gnupg  \
+  $WORKDIR/.sparrow \
+  $WORKDIR/.ssh  \
+  /Users/raphael/Library/Application\ Support/Bitcoin/bitcoin.conf \
+  /Users/raphael/Library/Application\ Support/Bitcoin/wallets \
+  /Users/raphael/Library/Application\ Support/Syncthing \
+  $WORKDIR/bitcoin-rpc-cookie \
+  $DEST

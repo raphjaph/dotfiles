@@ -1,0 +1,8 @@
+#!/usr/bin/env bash 
+
+# set -eou pipefail
+set -ou pipefail
+
+cat ~/Library/Application\ Support/BraveSoftware/Brave-Browser/Default/Bookmarks | \
+jq '.roots.bookmark_bar.children[] | select(.name != "not-share") | select(.name != "nixos") | .children | .. | .url? | select(.)' | \
+uniq | tr -d \"

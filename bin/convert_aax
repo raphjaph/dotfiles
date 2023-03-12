@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# get the activation_bytes from here: https://audible-tools.github.io/
+set -euo pipefail
+
+for entry in "$1"/*.aax
+do
+  ffmpeg -activation_bytes 32e14f0a -i "$entry" -c copy "${entry%.*}.m4b"
+
+  # for mp3 audio only (no chapter marks, cover, etc)
+  # ffmpeg -activation_bytes 32e14f0a -i "$entry" "${entry%.*}.mp3"
+
+  rm "$entry"
+done
+

@@ -1,0 +1,15 @@
+set -euo pipefail
+
+file=$(
+    rg --line-number . ~/notes ~/books ~/log | fzf --delimiter : --preview "bat --color=always {1} --highlight-line {2} --style=plain" | cut -d ':' -f 1 
+)
+
+# the dot means dont execute in a subshell
+if [[ -n $file ]]; then
+    echo $file
+#    bat --style=plain $file
+    . $EDITOR "$file"
+fi
+
+
+

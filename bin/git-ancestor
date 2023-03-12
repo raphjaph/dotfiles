@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+git merge-base --is-ancestor $1 $2
+
+is-ancestor=$?
+echo is-ancestor
+
+if [ $? -eq 0 ]
+then
+  echo "True"
+else
+  echo "False"
+fi

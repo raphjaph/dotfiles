@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+
+import tinify, sys, getopt
+
+def main(argv):
+    inputfile = ''
+    outputfile = ''
+    
+    opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+    for opt, arg in opts:
+      if opt == '-h':
+         print ('tinify -i <inputfile> -o <outputfile>')
+         sys.exit()
+      elif opt in ("-i", "--ifile"):
+         inputfile = arg
+      elif opt in ("-o", "--ofile"):
+         outputfile = arg
+    
+    tinify.key = "7XGhprcTXQ5PhFsnKh28Ry5dm6vHYDZc"  
+    source = tinify.from_file(inputfile)
+    source.to_file(outputfile)
+
+if __name__ == "__main__":
+   main(sys.argv[1:])

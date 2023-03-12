@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+MESSAGE=$*
+
+if [[ ! $MESSAGE ]]
+then
+  MESSAGE="quick fix"
+fi
+
+git add -u
+git commit -m "${MESSAGE}"
+git push
+
+

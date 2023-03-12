@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#set -euxo pipefail
+set -euo pipefail
+
+directory=$(
+  fd --type d --hidden | \
+  fzf --no-multi --select-1 \
+      --preview 'tree -C {} | head -100'
+)
+
+if [[ -n $directory ]]; then
+    echo $directory
+else 
+    pwd
+fi

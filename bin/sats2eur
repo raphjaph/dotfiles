@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+set -euo pipefail
+
+sats=$1
+btc=$(awk "BEGIN {print ${sats}/100000000}")
+
+curl eur.rate.sx/${btc}btc

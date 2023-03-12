@@ -1,0 +1,8 @@
+#!/usr/bin/env bash 
+
+# set -eou pipefail
+set -ou pipefail
+
+cp ~/Library/Application\ Support/BraveSoftware/Brave-Browser/Default/History .
+sqlite3 History "select url from URLS;" | rg "^http" | uniq 
+rm History 
