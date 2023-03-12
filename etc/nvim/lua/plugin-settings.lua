@@ -108,7 +108,7 @@ local on_attach = function(client)
   map('n', '<C-k>', '<CMD> lua vim.lsp.buf.signature_help()<CR>')
   map('n', '<LEADER>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
   map('n', '<SPACE>aa', '<CMD>lua vim.lsp.buf.code_action()<CR>')
-  map('n', '<LEADER>=', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+  map('n', '<LEADER>=', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>')
   map('n', '<SPACE>tt', '<CMD>lua toggle_completion()<CR>')
 end
 
@@ -116,6 +116,7 @@ local servers = {
   'gopls',
   'pyright',
   'rust_analyzer',
+  'sumneko_lua_ls',
 }
 
 for _, server in ipairs(servers) do
@@ -257,8 +258,12 @@ map('n', '<F3>', '<CMD>Lexplore<CR>')
 require('nvim_comment').setup()
 vim.keymap.set('n', '<C-c>', '<CMD>CommentToggle<CR>', opts)
 
---g.UltiSnipsExpandTrigger = '<tab>'
---g.UltiSnipsJumpBackwardTrigger = '<c-z>'
---vim.g.UltiSnipsJumpForwardTrigger = '<c-b>'
+vim.g.UltiSnipsExpandTrigger = '<tab>'
+vim.g.UltiSnipsJumpBackwardTrigger = '<c-z>'
+vim.g.UltiSnipsJumpForwardTrigger = '<c-b>'
 
---vim.g.rustfmt_autosave = 0
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  underline = true,
+})

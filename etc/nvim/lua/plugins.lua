@@ -87,10 +87,11 @@ require('lazy').setup({
   'nvim-lualine/lualine.nvim',
   'arkav/lualine-lsp-progress',
   { 'romgrk/barbar.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
+  
+  -- Snippets
+  'SirVer/ultisnips',
 })
 
--- Snippets
---'SirVer/ultisnips',
 --  --  Changes Vim working directory to project root
 --  use('airblade/vim-rooter')
 --
