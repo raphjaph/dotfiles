@@ -1,6 +1,6 @@
 require('util')
 require('plugins')
-require('plugin-settings')
+require('settings')
 require('mappings')
 require('autocmd')
 require('vim-script')

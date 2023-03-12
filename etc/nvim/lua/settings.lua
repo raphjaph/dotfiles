@@ -116,7 +116,7 @@ local servers = {
   'gopls',
   'pyright',
   'rust_analyzer',
-  'sumneko_lua_ls',
+  'lua_ls',
 }
 
 for _, server in ipairs(servers) do
