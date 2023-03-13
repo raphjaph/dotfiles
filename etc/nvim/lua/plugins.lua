@@ -87,7 +87,7 @@ require('lazy').setup({
   'nvim-lualine/lualine.nvim',
   'arkav/lualine-lsp-progress',
   { 'romgrk/barbar.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
-  
+
   -- Snippets
   'SirVer/ultisnips',
 })

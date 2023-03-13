@@ -16,7 +16,7 @@ crates:
   cargo install stylua
 
 formulae:
-  brew bundle install --file=~/Brewfile
+  brew bundle install --file=~/.Brewfile
 
 home-manager:
   nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.11.tar.gz home-manager
