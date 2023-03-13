@@ -209,7 +209,6 @@ require('bufferline').setup({
   highlight_alternate = false,
   highlight_visible = false,
   icons = 'numbers',
-  icon_custom_colors = true,
   icon_close_tab = 'x',
   insert_at_end = true,
 })
@@ -228,9 +227,9 @@ require('lualine').setup({
   },
 })
 
--- ==============================================================================
--- Markdown Composer
--- ==============================================================================
+-- =============================================================================
+-- Miscellaneous
+-- =============================================================================
 
 vim.g.markdown_composer_autostart = 0
 vim.g.markdown_composer_syntax_theme = 'dark'
@@ -240,20 +239,12 @@ vim.g.vim_markdown_conceal = 0
 vim.g.vim_markdown_conceal_code_blocks = 0
 vim.g.vim_markdown_new_list_item_indent = 0
 
--- ==============================================================================
--- Netrw
--- ==============================================================================
-
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3
 vim.g.netrw_browse_split = 0
 vim.g.netrw_altv = 1
 vim.g.netrw_winsize = 20
 map('n', '<F3>', '<CMD>Lexplore<CR>')
-
--- =============================================================================
--- Miscellaneous
--- =============================================================================
 
 require('nvim_comment').setup()
 vim.keymap.set('n', '<C-c>', '<CMD>CommentToggle<CR>', opts)
