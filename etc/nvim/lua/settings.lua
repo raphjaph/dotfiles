@@ -35,7 +35,7 @@ telescope.setup({
     file_browser = ivy,
     find_files = dropdown,
     git_files = dropdown,
-    lsp_references = ivy,
+    -- lsp_references = ivy,
   },
   extensions = {
     fzf = {
@@ -53,19 +53,19 @@ telescope.setup({
 
 require('nvim-treesitter.configs').setup({
   ensure_installed = {
-    'bash',
-    'c',
-    'css',
-    'go',
-    'html',
-    'java',
-    'javascript',
-    'lua',
-    'nix',
-    'python',
-    'rust',
-    'toml',
-    'typescript',
+    -- 'bash',
+    -- 'c',
+    -- 'css',
+    -- 'go',
+    -- 'html',
+    -- 'java',
+    -- 'javascript',
+    -- 'lua',
+    -- 'nix',
+    -- 'python',
+    -- 'rust',
+    -- 'toml',
+    -- 'typescript',
   },
 
   highlight = {
