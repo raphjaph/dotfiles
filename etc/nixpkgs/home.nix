@@ -53,10 +53,6 @@ in
       yapf
       zola
       zsh-completions
-#      zsh-vi-mode
-# broken:     hugo
-# broken:     netcat
-# broken:     python310Packages.howdoi
     ];
     sessionPath = [
       "$HOME/bin"
