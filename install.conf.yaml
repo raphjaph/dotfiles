@@ -1,12 +1,26 @@
+- clean: ['~', '~/.cargo']
 - clean:
-  - '~'
-  - ~/.cargo
-  - ~/.config
+    ~/.config:
+        recursive: true
 
 - create:
   - ~/.cargo
   - ~/.config
   - ~/tmp
+
+- link:
+    ~/.config/:
+        force: true
+        create: true
+        glob: true
+        relink: true
+        path: etc/*
+    ~/bin/:
+        force: true
+        create: true
+        glob: true
+        relink: true
+        path: bin/*
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
