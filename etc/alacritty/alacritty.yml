@@ -10,7 +10,7 @@ selection:
   save_to_clipboard: true
       
 window:
-  decorations: None
+  decorations: buttonless
   padding:
     x: 2 
     y: 2
