@@ -22,6 +22,7 @@ in
       go
       gopls
       htop
+      helix
       isort
       jq
       just
@@ -113,6 +114,7 @@ in
       gpum      = "git pull upstream master";
       gs        = "git status";
       hm        = "home-manager";
+      h         = "hx";
       j         = "just";
       jc        = "just --choose";
       jl        = "just --list";
@@ -129,6 +131,7 @@ in
       sn        = "search_notes";
       tma       = "tmux attach-session";
       tmn       = "tmux new -s";
+      tml       = "tmux list-sessions";
       unixt     = "date '+%s'";
       update    = "home-manager switch && source $HOME/.zshrc";
       vim       = "nvim";
