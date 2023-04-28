@@ -8,6 +8,8 @@ theme = "monokai_pro_spectrum"
 line-number = "absolute"
 scrolloff = 5
 cursorline = false
+bufferline = "always"
+shell = ["zsh", "-c"]
 
 [editor.statusline]
 left = ["file-name", "spacer", "spinner"]
@@ -23,6 +25,7 @@ select = "block"
 [editor.file-picker]
 hidden = true
 
+
 # Config stolen from here: https://github.com/LGUG2Z/helix-vim/blob/master/config.toml
 [keys.normal]
 # Quick iteration on config changes
@@ -34,6 +37,8 @@ hidden = true
 "backspace" = "shrink_selection"
 "ret" = "expand_selection"
 # C-l = "select_next_sibling"
+
+K = ["hover"]
 
 # Personal preference
 o = ["open_below", "normal_mode"]

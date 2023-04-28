@@ -102,6 +102,7 @@ in
       bcli      = "bitcoin-cli";
       bp        = "bat --style=plain --paging=always";
       c         = "clear";
+      cdd       = "cd ~/dotfiles";
       dot       = "git --git-dir=$HOME/.dotfiles --work-tree=$HOME";
       ffd       = "cd $(fzf_directory)";
       ffe       = "fzf_edit";
