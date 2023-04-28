@@ -30,10 +30,10 @@ hidden = true
 # C-r = ":config-reload"
 
 # Some nice Helix stuff
-C-h = "select_prev_sibling"
-C-j = "shrink_selection"
-C-k = "expand_selection"
-C-l = "select_next_sibling"
+# C-h = "select_prev_sibling"
+"backspace" = "shrink_selection"
+"ret" = "expand_selection"
+# C-l = "select_next_sibling"
 
 # Personal preference
 o = ["open_below", "normal_mode"]
