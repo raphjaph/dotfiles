@@ -1,7 +1,7 @@
 #!/usr/bin/env bash 
 
-set -eoxu pipefail
-# set -ou pipefail
+# set -eoxu pipefail
+set -ou pipefail
 
 WORKDIR=/Users/raphael
 DEST=/Volumes/Backup/gamma
@@ -26,7 +26,6 @@ rsync -avzP $@ \
   $WORKDIR/bookmarks.txt \
   $WORKDIR/browser_history.txt \
   $WORKDIR/notes \
-  $WORKDIR/projects \
   $DEST
 
 rm Brewfile
