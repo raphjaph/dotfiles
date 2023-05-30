@@ -222,7 +222,7 @@ require('lualine').setup({
   },
   statusline = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'filename', 'diff' },
+    lualine_b = { 'branch', { 'filename', file_status = true, path = 1 }, 'diff' },
     lualine_c = { 'lsp_progress' },
   },
 })

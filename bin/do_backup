@@ -15,7 +15,7 @@ get_browser_history > browser_history.txt
 # for complete synchronization add --delete option
 rsync -avzP $@ \
   $WORKDIR/.config \
-  $WORKDIR/.dotfiles \
+  $WORKDIR/dotfiles \
   $WORKDIR/Brewfile \
   $WORKDIR/Desktop \
   $WORKDIR/Documents \

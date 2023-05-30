@@ -6,7 +6,7 @@ theme = "monokai_pro_spectrum"
 
 [editor]
 line-number = "absolute"
-scrolloff = 5
+scrolloff = 11
 cursorline = false
 bufferline = "always"
 shell = ["zsh", "-c"]
@@ -61,6 +61,7 @@ S = "surround_add" # Would be nice to be able to do something after this but it 
 x = "delete_selection"
 p = ["paste_clipboard_after", "collapse_selection"]
 P = ["paste_clipboard_before", "collapse_selection"]
+
 # Would be nice to add ya and yi, but the surround commands can't be chained
 Y = ["extend_to_line_end", "yank_main_selection_to_clipboard", "collapse_selection"]
 
