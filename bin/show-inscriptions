@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-for url in $(./target/release/ord --wallet ord-hodl wallet inscriptions | jq -r '.[].explorer?')
+for url in $(ord --wallet ord-hodl wallet inscriptions | jq -r '.[].explorer?')
 do 
     open $url
 done

@@ -94,6 +94,9 @@ in
 
       # fix backspace after normal mode 
       bindkey "^?" backward-delete-char
+
+      # increase open file handle limit 
+      ulimit -n 1024
     '';
     shellAliases = {
       ".."      = "cd ..";
@@ -106,12 +109,14 @@ in
       dot       = "git --git-dir=$HOME/.dotfiles --work-tree=$HOME";
       ffd       = "cd $(fzf_directory)";
       ffe       = "fzf_edit";
+      gf        = "git diff --name-only | uniq | xargs $EDITOR";
       ga        = "git add -u";
       gap       = "git add -p";
       gb        = "git branch --sort=-committerdate";
       gc        = "git commit --verbose";
       gcb       = "git checkout -b";
       gch       = "git checkout";
+      gpa       = "for remote in `git remote`; do git push $remote; done";
       gpum      = "git pull upstream master";
       gs        = "git status";
       hm        = "home-manager";
