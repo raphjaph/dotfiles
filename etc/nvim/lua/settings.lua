@@ -7,7 +7,7 @@ require('util')
 
 local telescope = require('telescope')
 
-local extensions = { 'file_browser', 'fzf'}
+local extensions = { 'file_browser', 'fzf', 'harpoon'}
 
 for _, extension in ipairs(extensions) do
   telescope.load_extension(extension)
@@ -91,6 +91,23 @@ require('nvim-treesitter.configs').setup({
 
 -- Setup  treesitter for just
 require('tree-sitter-just').setup({})
+
+-- ==============================================================================
+-- Harpoon 
+-- ==============================================================================
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<LEADER>a", mark.add_file)
+vim.keymap.set("n", "<LEADER>mm", "<CMD>Telescope harpoon marks<CR>")
+vim.keymap.set("n", "<C-w>", function() ui.nav_prev() end)
+vim.keymap.set("n", "<C-e>", function() ui.nav_next() end)
+
+-- vim.keymap.set("n", "<LEADER>1", function() ui.nav_file(1) end)
+-- vim.keymap.set("n", "<LEADER>2", function() ui.nav_file(2) end)
+-- vim.keymap.set("n", "<LEADER>3", function() ui.nav_file(3) end)
+-- vim.keymap.set("n", "<LEADER>4", function() ui.nav_file(4) end)
+
 
 -- ==============================================================================
 -- LSP

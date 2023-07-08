@@ -90,6 +90,9 @@ require('lazy').setup({
 
   -- Snippets
   'SirVer/ultisnips',
+
+  -- Harpoon: File jumping
+  'ThePrimeagen/harpoon'
 })
 
 --  --  Changes Vim working directory to project root
