@@ -1,9 +1,1 @@
-[core]
-	pager = "/nix/store/6sf874gk28sz9mygxhg52cw6qwhgwy9k-delta-0.15.1/bin/delta"
-
-[interactive]
-	diffFilter = "/nix/store/6sf874gk28sz9mygxhg52cw6qwhgwy9k-delta-0.15.1/bin/delta --color-only"
-
-[user]
-	email = "raphjaph@protonmail.com"
-	name = "raphjaph"
+/nix/store/mlibwmyy00iwdwb3a1alwbwmiprbnc8d-home-manager-files/.config/git/config

@@ -7,7 +7,7 @@ require('util')
 
 local telescope = require('telescope')
 
-local extensions = { 'file_browser', 'fzf' }
+local extensions = { 'file_browser', 'fzf'}
 
 for _, extension in ipairs(extensions) do
   telescope.load_extension(extension)
@@ -202,14 +202,15 @@ require('bufferline').setup({
   tabpages = true,
   closable = true,
   clickable = true,
-  diagnostics = {
-    { enabled = true },
-  },
   hide = { extensions = false, inactive = false },
   highlight_alternate = false,
   highlight_visible = false,
-  icons = 'numbers',
-  icon_close_tab = 'x',
+  icons = {
+    buffer_index = true,
+    filetype = { enabled = false },
+    buttons = 'x',
+    diagnostics = {{ enabled = true },},
+  },
   insert_at_end = true,
 })
 
