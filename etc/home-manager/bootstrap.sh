@@ -6,8 +6,8 @@ https://nix-community.github.io/home-manager/index.html#ch-installation
 sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume --daemon
 
 # Install Home Manager
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-# nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
+# nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
 nix-channel --update
 
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
