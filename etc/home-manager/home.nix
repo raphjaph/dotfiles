@@ -120,6 +120,7 @@ in
       gpum      = "git pull upstream master";
       gs        = "git status";
       hm        = "home-manager";
+      http      = "python3 -m http.server";
       h         = "hx";
       j         = "just";
       jc        = "just --choose";

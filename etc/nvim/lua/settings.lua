@@ -14,16 +14,25 @@ for _, extension in ipairs(extensions) do
 end
 
 local dropdown = {
-  theme = 'dropdown',
-  previewer = false,
-  layout_config = { height = 0.5, width = 0.8 },
+  -- theme = 'dropdown',
+  layout_strategy = 'vertical',
+  layout_config = {
+    height = 0.8,
+    width = 0.8,
+    prompt_position = 'top',
+    mirror = true,
+  },
 }
 
-local ivy = {
-  theme = 'ivy',
+local dropdown_no_preview = {
+  -- theme = 'ivy',
   previewer = false,
-  border = false,
-  layout_config = { height = 10 },
+  layout_strategy = 'vertical',
+  layout_config = {
+    height = 0.8,
+    width = 0.8,
+    prompt_position = 'top',
+  },
 }
 
 telescope.setup({
@@ -32,10 +41,11 @@ telescope.setup({
   },
   pickers = {
     buffers = dropdown,
-    file_browser = ivy,
-    find_files = dropdown,
+    file_browser = dropdown,
+    find_files = dropdown_no_preview,
     git_files = dropdown,
-    -- lsp_references = ivy,
+    live_grep = dropdown,
+    lsp_references = dropdown,
   },
   extensions = {
     fzf = {
@@ -226,7 +236,7 @@ require('bufferline').setup({
     buffer_index = true,
     filetype = { enabled = false },
     buttons = 'x',
-    diagnostics = {{ enabled = true },},
+    diagnostics = { enabled = true },
   },
   insert_at_end = true,
 })
@@ -238,7 +248,7 @@ require('lualine').setup({
     -- theme = 'base16',
     theme = 'gruvbox-material',
   },
-  statusline = {
+  sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch', { 'filename', file_status = true, path = 1 }, 'diff' },
     lualine_c = { 'lsp_progress' },
