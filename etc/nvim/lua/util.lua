@@ -1,7 +1,7 @@
 local scopes = {
   b = vim.bo,
   g = vim.g,
-  o = vim.opt,
+  o = vim.o,
   w = vim.wo,
 }
 
