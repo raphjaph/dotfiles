@@ -14,23 +14,22 @@ for _, extension in ipairs(extensions) do
 end
 
 local dropdown = {
-  -- theme = 'dropdown',
   layout_strategy = 'vertical',
   layout_config = {
-    height = 0.8,
-    width = 0.8,
+    height = 0.95,
+    width = 0.95,
+    preview_height = 0.7,
     prompt_position = 'top',
-    mirror = true,
+    mirror = false,
   },
 }
 
 local dropdown_no_preview = {
-  -- theme = 'ivy',
   previewer = false,
   layout_strategy = 'vertical',
   layout_config = {
-    height = 0.8,
-    width = 0.8,
+    height = 0.9,
+    width = 0.9,
     prompt_position = 'top',
   },
 }
