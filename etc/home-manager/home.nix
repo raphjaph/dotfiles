@@ -117,6 +117,7 @@ in
       gcb       = "git checkout -b";
       gch       = "git checkout";
       gpa       = "for remote in `git remote`; do git push $remote; done";
+      gpf       = "git push --force-with-lease";
       gpum      = "git pull upstream master";
       gs        = "git status";
       hm        = "home-manager";
