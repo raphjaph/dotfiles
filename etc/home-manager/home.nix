@@ -115,7 +115,7 @@ in
       gb        = "git branch --sort=-committerdate";
       gc        = "git commit --verbose";
       gcb       = "git checkout -b";
-      gch       = "git checkout";
+      gcm       = "git checkout master";
       gpa       = "for remote in `git remote`; do git push $remote; done";
       gpf       = "git push --force-with-lease";
       gpum      = "git pull upstream master";
