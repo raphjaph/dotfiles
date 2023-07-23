@@ -119,6 +119,7 @@ in
       gpa       = "for remote in `git remote`; do git push $remote; done";
       gpf       = "git push --force-with-lease";
       gpum      = "git pull upstream master";
+      gpom      = "git pull origin master";
       gs        = "git status";
       hm        = "home-manager";
       http      = "python3 -m http.server";
