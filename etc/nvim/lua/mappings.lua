@@ -29,12 +29,9 @@ map('n', '<LEADER>8', '<CMD>BufferGoto 8<CR>')
 map('n', '<LEADER>9', '<CMD>BufferGoto 9<CR>')
 map('n', '<LEADER>0', '<CMD>BufferLast<CR>')
 map('n', '<LEADER>x', '<CMD>BufferClose<CR>')
-map('n', '<LEADER>n', '<CMD>BufferNext<CR>')
-map('n', '<LEADER>p', '<CMD>BufferPrev<CR>')
-map('n', '<LEADER>b>', '<CMD>BufferPick<CR>')
+map('n', '<C-n>', '<CMD>BufferNext<CR>')
+map('n', '<C-p>', '<CMD>BufferPrev<CR>')
 map('n', '<ESC>', '<CMD>noh<RETURN><ESC>')
-map('n', '<ESC>^[', '<ESC>^[')
-
 
 
 -- map('n', '<LEADER>bb', '<CMD>BufferOrderByBufferNumber<CR>')

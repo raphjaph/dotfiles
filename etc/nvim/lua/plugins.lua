@@ -28,8 +28,6 @@ require('lazy').setup({
       },
     },
   },
-
-  -- Telescope File Browser
   'nvim-telescope/telescope-file-browser.nvim',
 
   -- Treesitter
@@ -72,27 +70,18 @@ require('lazy').setup({
     ft = 'markdown',
     build = 'cargo build --release --locked',
   },
-  { 'plasticboy/vim-markdown', ft = 'markdown' },
-
-  -- Pretty and lightweight status and tab lines
-  -- 'vim-airline/vim-airline',
-  -- 'vim-airline/vim-airline-themes',
+  { 'plasticboy/vim-markdown',   ft = 'markdown' },
 
   -- Git annoations
   'tpope/vim-fugitive',
   'airblade/vim-gitgutter',
 
   -- Statusline & Bufferline
-  -- {'nvim-lualine/lualine.nvim', dependencies = 'kyazdani42/nvim-web-devicons'},
-  'nvim-lualine/lualine.nvim',
-  'arkav/lualine-lsp-progress',
-  { 'romgrk/barbar.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
+  { 'romgrk/barbar.nvim',        dependencies = 'lewis6991/gitsigns.nvim' },
+  { 'nvim-lualine/lualine.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
 
   -- Snippets
   'SirVer/ultisnips',
-
-  -- Harpoon: File jumping
-  'ThePrimeagen/harpoon'
 })
 
 --  --  Changes Vim working directory to project root

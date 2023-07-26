@@ -7,7 +7,7 @@ require('util')
 
 local telescope = require('telescope')
 
-local extensions = { 'file_browser', 'fzf', 'harpoon'}
+local extensions = { 'file_browser', 'fzf' }
 
 for _, extension in ipairs(extensions) do
   telescope.load_extension(extension)
@@ -101,22 +101,6 @@ require('nvim-treesitter.configs').setup({
 -- Setup  treesitter for just
 require('tree-sitter-just').setup({})
 
--- ==============================================================================
--- Harpoon 
--- ==============================================================================
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
-
-vim.keymap.set("n", "<LEADER>a", mark.add_file)
-vim.keymap.set("n", "<LEADER>mm", "<CMD>Telescope harpoon marks<CR>")
-vim.keymap.set("n", "<C-w>", function() ui.nav_prev() end)
-vim.keymap.set("n", "<C-e>", function() ui.nav_next() end)
-
--- vim.keymap.set("n", "<LEADER>1", function() ui.nav_file(1) end)
--- vim.keymap.set("n", "<LEADER>2", function() ui.nav_file(2) end)
--- vim.keymap.set("n", "<LEADER>3", function() ui.nav_file(3) end)
--- vim.keymap.set("n", "<LEADER>4", function() ui.nav_file(4) end)
-
 
 -- ==============================================================================
 -- LSP
@@ -136,6 +120,7 @@ local on_attach = function(client)
   map('n', '<SPACE>aa', '<CMD>lua vim.lsp.buf.code_action()<CR>')
   map('n', '<LEADER>=', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>')
   map('n', '<SPACE>tt', '<CMD>lua toggle_completion()<CR>')
+  client.server_capabilities.semanticTokensProvider = nil -- disable semantic highlighting
 end
 
 local servers = {
@@ -222,7 +207,7 @@ cmp.setup.cmdline({ '/', '?' }, {
 -- Bufferline & Lualina
 -- ==============================================================================
 
-require('bufferline').setup({
+require('barbar').setup({
   animation = false,
   auto_hide = false,
   tabpages = true,
@@ -238,7 +223,8 @@ require('bufferline').setup({
     diagnostics = { enabled = true },
   },
   insert_at_end = true,
-})
+}
+)
 
 require('lualine').setup({
   options = {
@@ -250,7 +236,7 @@ require('lualine').setup({
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch', { 'filename', file_status = true, path = 1 }, 'diff' },
-    lualine_c = { 'lsp_progress' },
+    lualine_c = {},
   },
 })
 
