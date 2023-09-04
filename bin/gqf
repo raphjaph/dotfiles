@@ -11,6 +11,6 @@ fi
 
 git add -u
 git commit -m "${MESSAGE}"
-git push origin
+git push
 
 
