@@ -132,6 +132,8 @@ in
       o         = "open .";
       p         = "python -q";
       qr        = "qrencode -t ansiutf8";
+      rap       = "return_and_pop.sh";
+      sas       = "switch_and_stash.sh";
       s         = "source $HOME/.zshrc";
       sbcli     = "bitcoin-cli -chain=signet";
       sn        = "search_notes";
