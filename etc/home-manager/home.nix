@@ -147,7 +147,7 @@ in
       update    = "home-manager switch && source $HOME/.zshrc";
       vim       = "nvim";
       v         = "nvim";
-      vimrc     = "cd ~/.config/nvim && nvim init.vim";
+      vims      = "cd ~/.config/nvim && nvim init.lua";
       veracrypt = "/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt --text";
     };
     defaultKeymap = "viins";
