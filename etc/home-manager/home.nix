@@ -49,6 +49,7 @@ in
       tmux
       tor
       tree
+      tree-sitter
       wget
       yapf
       zola

@@ -62,8 +62,8 @@ telescope.setup({
 
 require('nvim-treesitter.configs').setup({
   ensure_installed = {
-    'bash',
-    'c',
+    -- 'bash',
+    -- 'c',
     'cpp',
     'css',
     'glsl',
