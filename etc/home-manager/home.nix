@@ -21,12 +21,13 @@ in
       gnupg
       go
       gopls
-      htop
       helix
+      htop
       isort
       jq
       just
       neovim
+      nodePackages.typescript-language-server
       nodePackages_latest.prettier
       pdfgrep
       pfetch
@@ -113,6 +114,7 @@ in
       gb        = "git branch --sort=-committerdate";
       gc        = "git commit --verbose";
       gcb       = "git checkout -b";
+      ghprc     = "gh pr checkout";
       gpa       = "for remote in `git remote`; do git push $remote; done";
       gpf       = "git push --force-with-lease";
       gpum      = "git pull upstream master";

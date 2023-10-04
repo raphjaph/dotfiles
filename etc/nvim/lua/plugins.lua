@@ -82,6 +82,9 @@ require('lazy').setup({
 
   -- Snippets
   'SirVer/ultisnips',
+
+  -- Cool start screen
+  'mhinz/vim-startify',
 })
 
 --  --  Changes Vim working directory to project root

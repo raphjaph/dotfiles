@@ -62,19 +62,24 @@ telescope.setup({
 
 require('nvim-treesitter.configs').setup({
   ensure_installed = {
-    -- 'bash',
-    -- 'c',
-    -- 'css',
-    -- 'go',
-    -- 'html',
-    -- 'java',
-    -- 'javascript',
-    -- 'lua',
-    -- 'nix',
-    -- 'python',
-    -- 'rust',
-    -- 'toml',
-    -- 'typescript',
+    'bash',
+    'c',
+    'cpp',
+    'css',
+    'glsl',
+    'go',
+    'html',
+    'java',
+    'javascript',
+    'latex',
+    'lua',
+    'nix',
+    'python',
+    'rust',
+    'toml',
+    'tsx',
+    'typescript',
+    'typescript',
   },
 
   highlight = {
@@ -124,15 +129,21 @@ local on_attach = function(client)
 end
 
 local servers = {
+  -- 'clangd',
   'gopls',
+  'lua_ls',
+  -- 'lua-language-server',
   'pyright',
   'rust_analyzer',
-  'lua_ls',
+  'tsserver',
 }
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 for _, server in ipairs(servers) do
   lsp[server].setup({
     on_attach = on_attach,
+    capabilities = capabilities,
     settings = {
       [server] = {
         diagnostics = { disabled = { 'inactive-code' } },
@@ -240,8 +251,42 @@ require('lualine').setup({
   },
 })
 
+
 -- =============================================================================
--- Miscellaneous
+-- Startify
+-- =============================================================================
+
+vim.g.startify_custom_header = {
+  '                                                            ',
+  '                                                            ',
+  '                                                            ',
+  '                                        ░░                  ',
+  '      ███████   █████   ██████  ██    ██ ██ ██████████      ',
+  '     ░░██░░░██ ██░░░██ ██░░░░██░██   ░██░██░░██░░██░░██     ',
+  '      ░██  ░██░███████░██   ░██░░██ ░██ ░██ ░██ ░██ ░██     ',
+  '      ░██  ░██░██░░░░ ░██   ░██ ░░████  ░██ ░██ ░██ ░██     ',
+  '      ███  ░██░░██████░░██████   ░░██   ░██ ███ ░██ ░██     ',
+  '     ░░░   ░░  ░░░░░░  ░░░░░░     ░░    ░░ ░░░  ░░  ░░      ',
+  '                                                            ',
+  '                                                            ',
+}
+
+vim.g.startify_bookmarks = {
+  { v = '~/dotfiles/config/nvim/init.lua' },
+}
+
+vim.g.startify_commands = {
+  { ch = { 'Health Check', ':checkhealth' } },
+  { ps = { 'Plugin sync', ':LazySync' } },
+  { pu = { 'Update neovim plugins', ':LazyUpdate' } },
+  { h = { 'Help', ':help' } },
+}
+
+
+
+
+-- =============================================================================
+-- Markdown
 -- =============================================================================
 
 vim.g.markdown_composer_autostart = 0
@@ -251,6 +296,11 @@ vim.g.vim_markdown_auto_insert_bullets = 0
 vim.g.vim_markdown_conceal = 0
 vim.g.vim_markdown_conceal_code_blocks = 0
 vim.g.vim_markdown_new_list_item_indent = 0
+
+
+-- =============================================================================
+-- Miscellaneous
+-- =============================================================================
 
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3
