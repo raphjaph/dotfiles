@@ -153,6 +153,18 @@ for _, server in ipairs(servers) do
 end
 
 -- ==============================================================================
+-- Luasnip
+-- ==============================================================================
+local luasnip = require('luasnip')
+
+require('luasnip.loaders.from_snipmate').lazy_load()
+
+luasnip.config.set_config({
+  history = true,
+  updateevents = 'TextChanged,TextChangedI',
+})
+
+-- ==============================================================================
 -- LSP Autocomplete (nvim-cmp)
 -- ==============================================================================
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
@@ -160,9 +172,14 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 local cmp = require('cmp')
 
 cmp.setup({
+  sources = {
+    { name = 'buffer' },
+    { name = 'luasnip' },
+    { name = 'nvim_lsp' },
+  },
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      luasnip.lsp_expand(args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -191,11 +208,6 @@ cmp.setup({
         end
       end,
     }),
-  }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-  }, {
-    { name = 'buffer' },
   }),
 })
 

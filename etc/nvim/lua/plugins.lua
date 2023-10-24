@@ -80,7 +80,9 @@ require('lazy').setup({
   { 'romgrk/barbar.nvim',        dependencies = 'lewis6991/gitsigns.nvim' },
   { 'nvim-lualine/lualine.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
 
-  -- Snippets
+    -- Snippets source for nvim-cmp
+  'saadparwaiz1/cmp_luasnip',
+  'L3MON4D3/LuaSnip',
   'SirVer/ultisnips',
 
   -- Cool start screen
