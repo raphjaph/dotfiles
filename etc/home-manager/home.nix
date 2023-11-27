@@ -11,6 +11,7 @@ in
       asciiquarium
       bat
       bitcoind
+      bun
       btop
       cmake
       fd
@@ -114,6 +115,7 @@ in
       gap       = "git add -p";
       gb        = "git branch --sort=-committerdate";
       gc        = "git commit --verbose";
+      gcm       = "git commit -m";
       gcb       = "git checkout -b";
       ghprc     = "gh pr checkout";
       gpa       = "for remote in `git remote`; do git push $remote; done";
@@ -122,7 +124,7 @@ in
       gpom      = "git pull origin master";
       gs        = "git status";
       hm        = "home-manager";
-      http      = "python3 -m http.server";
+      http      = "python3 -m http.server -b 127.0.0.1 -d . 8888";
       h         = "hx";
       j         = "just";
       jc        = "just --choose";
