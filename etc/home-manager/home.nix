@@ -135,6 +135,7 @@ in
       lv        = "nvim -c \"normal '0\" -c bd1";
       man       = "colorful_man";
       o         = "open .";
+      ord       = "ord --index-sats";
       p         = "python -q";
       qr        = "qrencode -t ansiutf8";
       rap       = "return_and_pop.sh";
