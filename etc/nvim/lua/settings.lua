@@ -112,9 +112,7 @@ require('tree-sitter-just').setup({})
 -- ==============================================================================
 --
 require("mason").setup()
-require("mason-lspconfig").setup {
-  ensure_installed = { "lua_ls", "rust_analyzer", "html", "htmx" },
-}
+require("mason-lspconfig").setup()
 
 local lsp = require('lspconfig')
 
@@ -137,7 +135,8 @@ local servers = {
   -- 'clangd',
   'gopls',
   'lua_ls',
-  -- 'htmx',
+  'html',
+  'htmx',
   -- 'lua-language-server',
   'pyright',
   'rust_analyzer',

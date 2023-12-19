@@ -44,7 +44,6 @@ require('lazy').setup({
   -- Treesitter
   'nvim-treesitter/nvim-treesitter',
 
-
   -- Vim Tmux splits
   'christoomey/vim-tmux-navigator',
 
@@ -91,55 +90,3 @@ require('lazy').setup({
   -- Cool start screen
   'mhinz/vim-startify',
 })
-
---  --  Changes Vim working directory to project root
---  use('airblade/vim-rooter')
---
---  -- Support .editorconfig
---  use('editorconfig/editorconfig-vim')
---
---  -- A vim alignment plugin
---  use('junegunn/vim-easy-align')
---
---  -- Cool start screen
---  use('mhinz/vim-startify')
---
---  -- Toml syntax
---  use('cespare/vim-toml')
---
---  -- Distraction free writing
---  use('junegunn/goyo.vim')
---
---  -- GLSL syntax highlighting
---  use('tikhomirov/vim-glsl')
---
---  -- A better latex editing experience
---  use({
---    'lervag/vimtex',
---    ft = 'tex',
---  })
---
---  -- Latex concealer
---  use({
---    'KeitaNakamura/tex-conceal.vim',
---    ft = 'tex',
---  })
---
---  -- Text filtering and alignment
---  use({
---    'godlygeek/tabular',
---    cmd = 'Tabularize',
---  })
---
---  -- Rust support
---  use({
---    'rust-lang/rust.vim',
---    ft = 'rust',
---  })
---
---  -- Query ChatGPT
---  use({
---    'terror/chatgpt.nvim',
---    run = 'pip3 install -r requirements.txt',
---  })
---end)
