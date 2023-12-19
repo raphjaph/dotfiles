@@ -1,7 +1,7 @@
 require('plugins')
 require('util')
 
--- ==============================================================================
+-- =============================================================================
 -- Telescope
 -- ==============================================================================
 
@@ -110,6 +110,11 @@ require('tree-sitter-just').setup({})
 -- ==============================================================================
 -- LSP
 -- ==============================================================================
+--
+require("mason").setup()
+require("mason-lspconfig").setup {
+  ensure_installed = { "lua_ls", "rust_analyzer", "html", "htmx" },
+}
 
 local lsp = require('lspconfig')
 
@@ -132,6 +137,7 @@ local servers = {
   -- 'clangd',
   'gopls',
   'lua_ls',
+  -- 'htmx',
   -- 'lua-language-server',
   'pyright',
   'rust_analyzer',
@@ -139,6 +145,8 @@ local servers = {
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+lsp.htmx.setup {}
 
 for _, server in ipairs(servers) do
   lsp[server].setup({

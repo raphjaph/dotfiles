@@ -16,6 +16,17 @@ vim.opt.rtp:prepend(lazypath)
 opt('g', 'mapleader', ' ')
 
 require('lazy').setup({
+  -- LSP
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  'neovim/nvim-lspconfig',
+
+  -- LSP autocomplete completion sources
+  'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+
   -- Telescope
   {
     'nvim-telescope/telescope.nvim',
@@ -33,14 +44,6 @@ require('lazy').setup({
   -- Treesitter
   'nvim-treesitter/nvim-treesitter',
 
-  -- Native LSP collection of commmon configs
-  'neovim/nvim-lspconfig',
-
-  -- LSP autocomplete completion sources
-  'hrsh7th/nvim-cmp',
-  'hrsh7th/cmp-nvim-lsp',
-  'hrsh7th/cmp-buffer',
-  'hrsh7th/cmp-path',
 
   -- Vim Tmux splits
   'christoomey/vim-tmux-navigator',
@@ -80,7 +83,7 @@ require('lazy').setup({
   { 'romgrk/barbar.nvim',        dependencies = 'lewis6991/gitsigns.nvim' },
   { 'nvim-lualine/lualine.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
 
-    -- Snippets source for nvim-cmp
+  -- Snippets source for nvim-cmp
   'saadparwaiz1/cmp_luasnip',
   'L3MON4D3/LuaSnip',
   'SirVer/ultisnips',
