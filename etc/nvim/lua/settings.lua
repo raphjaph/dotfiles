@@ -132,15 +132,16 @@ local on_attach = function(client)
 end
 
 local servers = {
-  -- 'clangd',
+  'clangd',
   'gopls',
   'lua_ls',
   'html',
   'htmx',
-  -- 'lua-language-server',
+  'cssls',
   'pyright',
   'rust_analyzer',
   'tsserver',
+  -- 'shfmt',
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -298,11 +299,9 @@ vim.g.startify_commands = {
   { ch = { 'Health Check', ':checkhealth' } },
   { ps = { 'Plugin sync', ':LazySync' } },
   { pu = { 'Update neovim plugins', ':LazyUpdate' } },
+  { ma = { 'LSP Language Servers', ':Mason' } },
   { h = { 'Help', ':help' } },
 }
-
-
-
 
 -- =============================================================================
 -- Markdown
