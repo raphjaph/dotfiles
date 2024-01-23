@@ -6,7 +6,7 @@ MESSAGE=$*
 
 if [[ ! $MESSAGE ]]
 then
-  MESSAGE="quick fix"
+  MESSAGE="Amend"
 fi
 
 git add -u

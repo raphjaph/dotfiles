@@ -26,7 +26,6 @@ in
       htop
       isort
       jq
-      just
       neovim
       nodePackages.typescript-language-server
       nodePackages_latest.prettier
@@ -39,7 +38,6 @@ in
       qrencode
       reattach-to-user-namespace
       ripgrep
-      rust-analyzer
       rustup
       silver-searcher
       skim
@@ -96,7 +94,7 @@ in
       bindkey "^?" backward-delete-char
 
       # increase open file handle limit 
-      ulimit -n 1024
+      ulimit -n 4096
     '';
     shellAliases = {
       ".."      = "cd ..";
@@ -109,19 +107,18 @@ in
       dot       = "git --git-dir=$HOME/.dotfiles --work-tree=$HOME";
       ffd       = "cd $(fzf_directory)";
       ffe       = "fzf_edit";
-      gf        = "git diff --name-only | uniq | xargs $EDITOR";
-      ga        = "git add -u";
+      gaa       = "git add -u";
       gap       = "git add -p";
-      gb        = "git branch --sort=-committerdate";
-      gc        = "git commit --verbose";
-      gcm       = "git commit -m";
+      gbr       = "git branch --sort=-committerdate";
+      gcm       = "git commit --verbose";
       gcb       = "git checkout -b";
-      ghprc     = "gh pr checkout";
+      gdf       = "git diff --name-only master | uniq | xargs $EDITOR";
       gpa       = "for remote in `git remote`; do git push $remote; done";
       gpf       = "git push --force-with-lease";
       gpum      = "git pull upstream master";
       gpom      = "git pull origin master";
       gs        = "git status";
+      ghprc     = "gh pr checkout";
       hm        = "home-manager";
       http      = "python3 -m http.server -b 127.0.0.1 -d . 8888";
       h         = "hx";
@@ -134,7 +131,6 @@ in
       lv        = "nvim -c \"normal '0\" -c bd1";
       man       = "colorful_man";
       o         = "open .";
-      ord       = "ord --index-sats";
       p         = "python -q";
       qr        = "qrencode -t ansiutf8";
       rap       = "return_and_pop.sh";
@@ -142,6 +138,7 @@ in
       s         = "source $HOME/.zshrc";
       sbcli     = "bitcoin-cli -chain=signet";
       sn        = "search_notes";
+      tree      = "erd";
       tma       = "tmux attach-session";
       tmn       = "tmux new -s";
       tml       = "tmux list-sessions";
