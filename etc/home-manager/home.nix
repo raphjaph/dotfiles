@@ -11,8 +11,8 @@ in
       asciiquarium
       bat
       bitcoind
-      bun
       btop
+      bun
       cmake
       fd
       ffmpeg
@@ -71,9 +71,20 @@ in
     historySubstringSearch.enable = true;
     initExtra = ''
       PROMPT=$'\n%F{green}%m%f %B%F{cyan}%~%f%b\n> '
+      
+      eval "$(brew shellenv)"
+      fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
 
       # share history between windows/panes
       setopt inc_append_history
+      
+
+      if type brew &>/dev/null; then
+        FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+      
+        autoload -Uz compinit
+        compinit
+      fi
       
       # set some env vars
       export EDITOR=nvim
@@ -94,12 +105,11 @@ in
       bindkey "^?" backward-delete-char
 
       # increase open file handle limit 
-      ulimit -n 4096
+      ulimit -n 2048
     '';
     shellAliases = {
       ".."      = "cd ..";
       b         = "bat --style=plain";
-      bbcli     = "bitcoin-cli -rpccookiefile=/Users/raphael/bitcoin-rpc-cookie -rpcconnect=10.13.13.2";
       bcli      = "bitcoin-cli";
       bp        = "bat --style=plain --paging=always";
       c         = "clear";
@@ -118,13 +128,15 @@ in
       gpum      = "git pull upstream master";
       gpom      = "git pull origin master";
       gs        = "git status";
+      lg        = "lazygit";
       ghprc     = "gh pr checkout";
       hm        = "home-manager";
       http      = "python3 -m http.server -b 127.0.0.1 -d . 8888";
       h         = "hx";
-      j         = "just";
-      jc        = "just --choose";
-      jl        = "just --list";
+      j         = "just --unstable";
+      ja        = "just --unstable atlantis";
+      jc        = "just --unstable --choose";
+      jl        = "just --unstable --list";
       la        = "ls -laGh";# --color";
       ll        = "ls -lGh";# --color";
       ls        = "ls -G";# --color";
@@ -138,7 +150,7 @@ in
       s         = "source $HOME/.zshrc";
       sbcli     = "bitcoin-cli -chain=signet";
       sn        = "search_notes";
-      tree      = "erd";
+      tree      = "erd -H";
       tma       = "tmux attach-session";
       tmn       = "tmux new -s";
       tml       = "tmux list-sessions";

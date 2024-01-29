@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+rm ~/dotfiles/Brewfile
+brew bundle dump --file=~/dotfiles/Brewfile

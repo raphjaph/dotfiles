@@ -21,8 +21,11 @@
         glob: true
         relink: true
         path: bin/*
-    ~/RectangleConfig.json:
-    ~/Brewfile:
+    ~/RectangleConfig.json: RectangleConfig.json
+    ~/Brewfile: Brewfile
+    ~/.zsh: etc/zsh
+    ~/.zshrc: etc/zshrc
+
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
