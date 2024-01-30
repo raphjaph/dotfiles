@@ -1,0 +1,49 @@
+import = ["/Users/raphael/.config/alacritty/default_colors.toml"]
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[cursor]
+unfocused_hollow = true
+vi_mode_style = "Beam"
+
+[cursor.style]
+shape = "Block"
+
+[font]
+size = 17.0
+
+[font.normal]
+family = "SauceCodePro Nerd Font Mono"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "V"
+mode = "~Search"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Escape"
+mode = "Vi"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[shell]
+args = ["-l"]
+program = "/bin/zsh"
+
+[window]
+decorations = "buttonless"
+
+[window.padding]
+x = 2
+y = 2

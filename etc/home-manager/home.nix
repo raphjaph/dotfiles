@@ -79,12 +79,12 @@ in
       setopt inc_append_history
       
 
-      if type brew &>/dev/null; then
-        FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-      
-        autoload -Uz compinit
-        compinit
-      fi
+      #if type brew &>/dev/null; then
+      #  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+      #
+      #  autoload -Uz compinit
+      #  compinit
+      #fi
       
       # set some env vars
       export EDITOR=nvim
