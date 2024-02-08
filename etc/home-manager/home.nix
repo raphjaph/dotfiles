@@ -10,7 +10,6 @@ in
     packages = with pkgs; [
       asciiquarium
       bat
-      bitcoind
       btop
       bun
       cmake
