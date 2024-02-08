@@ -1,0 +1,82 @@
+## zsh plugins
+source ~/.zsh/plugins/zsh-completions/zsh-completions.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# Use viins keymap as the default.
+bindkey -v
+
+# History options should be set in .zshrc and after oh-my-zsh sourcing.
+HISTSIZE="10000"
+SAVEHIST="10000"
+
+HISTFILE="$HOME/.zsh_history"
+mkdir -p "$(dirname "$HISTFILE")"
+
+setopt HIST_FCNTL_LOCK
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+unsetopt HIST_EXPIRE_DUPS_FIRST
+setopt SHARE_HISTORY
+unsetopt EXTENDED_HISTORY
+
+PROMPT=$'\n%F{green}%m%f %B%F{cyan}%~%f%b\n> '
+
+eval "$(brew shellenv)"
+fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
+
+# share history between windows/panes
+setopt inc_append_history
+
+
+#if type brew &>/dev/null; then
+#  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+#
+#  autoload -Uz compinit
+#  compinit
+#fi
+
+# set some env vars
+export EDITOR=nvim
+export VISUAL=nvim
+export HOMEBREW_NO_ANALYTICS=1 
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS=--require-sha
+
+source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh 
+#source $(brew --prefix)/opt/fzf/shell/completion.zsh 
+export FZF_DEFAULT_COMMAND='fd --type f --color=never --hidden'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"  
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :500 {}'"
+export FZF_ALT_C_COMMAND='fd --type d . --color=never --hidden'
+export FZF_DEFAULT_OPTS='
+  --height 75% --multi --reverse
+  --bind ctrl-f:page-down,ctrl-b:page-up
+'
+
+# better vi mode in zsh
+#source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+# fix backspace after normal mode 
+bindkey "^?" backward-delete-char
+
+# increase open file handle limit 
+ulimit -n 2048
+
+source: ~/.zsh/aliases.zsh
+
+man() {
+	env \
+		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+		LESS_TERMCAP_md=$(printf "\e[1;31m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;32m") \
+		man "$@"
+}
