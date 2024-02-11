@@ -1,8 +1,11 @@
 ## zsh plugins
-source ~/.zsh/plugins/zsh-completions/zsh-completions.zsh
+source ~/.zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+## aliases
+source: ~/.zsh/aliases.zsh
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -10,7 +13,6 @@ bindkey '^[[B' history-substring-search-down
 # Use viins keymap as the default.
 bindkey -v
 
-# History options should be set in .zshrc and after oh-my-zsh sourcing.
 HISTSIZE="10000"
 SAVEHIST="10000"
 
@@ -24,14 +26,13 @@ unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
 
+# share history between windows/panes
+setopt inc_append_history
+
 PROMPT=$'\n%F{green}%m%f %B%F{cyan}%~%f%b\n> '
 
 eval "$(brew shellenv)"
 fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
-
-# share history between windows/panes
-setopt inc_append_history
-
 
 #if type brew &>/dev/null; then
 #  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -66,8 +67,6 @@ bindkey "^?" backward-delete-char
 
 # increase open file handle limit 
 ulimit -n 2048
-
-source: ~/.zsh/aliases.zsh
 
 man() {
 	env \
