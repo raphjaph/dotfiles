@@ -5,8 +5,6 @@ alias bp="bat --style=plain --paging=always"
 alias c="clear"
 alias cdd="cd ~/dotfiles"
 alias date='date +%d-%m-%y'
-alias dot="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-alias ffd="cd $(fzf_directory)"
 alias ffe="fzf_edit"
 alias gaa="git add -u"
 alias gap="git add -p"
