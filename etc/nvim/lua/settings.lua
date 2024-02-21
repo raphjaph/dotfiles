@@ -79,7 +79,7 @@ require('nvim-treesitter.configs').setup({
     'toml',
     'tsx',
     'typescript',
-    'typescript',
+    'svelte',
   },
 
   highlight = {
@@ -141,7 +141,7 @@ local servers = {
   'pyright',
   'rust_analyzer',
   'tsserver',
-  -- 'shfmt',
+  -- 'svelteserver',
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -292,7 +292,7 @@ vim.g.startify_custom_header = {
 }
 
 vim.g.startify_bookmarks = {
-  { v = '~/dotfiles/config/nvim/init.lua' },
+  { v = '~/dotfiles/etc/nvim/init.lua' },
 }
 
 vim.g.startify_commands = {
@@ -330,9 +330,9 @@ map('n', '<F3>', '<CMD>Lexplore<CR>')
 require('nvim_comment').setup()
 vim.keymap.set('n', '<C-c>', '<CMD>CommentToggle<CR>', opts)
 
-vim.g.UltiSnipsExpandTrigger = '<tab>'
-vim.g.UltiSnipsJumpBackwardTrigger = '<c-z>'
-vim.g.UltiSnipsJumpForwardTrigger = '<c-b>'
+-- vim.g.UltiSnipsExpandTrigger = '<tab>'
+-- vim.g.UltiSnipsJumpBackwardTrigger = '<c-z>'
+-- vim.g.UltiSnipsJumpForwardTrigger = '<c-b>'
 
 vim.diagnostic.config({
   virtual_text = false,

@@ -11,7 +11,6 @@ in
       asciiquarium
       bat
       btop
-      bun
       cmake
       fd
       ffmpeg
@@ -25,7 +24,7 @@ in
       htop
       isort
       jq
-      neovim
+#      neovim
       nodePackages.typescript-language-server
       nodePackages_latest.prettier
       pdfgrep

@@ -85,7 +85,7 @@ require('lazy').setup({
   -- Snippets source for nvim-cmp
   'saadparwaiz1/cmp_luasnip',
   'L3MON4D3/LuaSnip',
-  'SirVer/ultisnips',
+  -- 'SirVer/ultisnips',
 
   -- Cool start screen
   'mhinz/vim-startify',
