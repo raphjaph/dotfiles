@@ -50,6 +50,13 @@ opt('o', 'undofile', true)
 opt('o', 'visualbell', true)
 opt('o', 'wildmode', 'longest,list,full')
 
+vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
+vim.api.nvim_create_autocmd("User", {
+  group = "lualine_augroup",
+  pattern = "LspProgressStatusUpdated",
+  callback = require("lualine").refresh,
+})
+
 vim.api.nvim_exec(
   [[
 """"""""""""""""""""""""""""""""""""""""""""""

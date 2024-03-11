@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-for url in $(ord wallet --name ord-hodl inscriptions | jq -r '.[].explorer?')
+for url in $(ord wallet --name ord-hodl --server-url http:127.0.0.1:8181 inscriptions | jq -r '.[].explorer?')
 do 
     open $url
 done

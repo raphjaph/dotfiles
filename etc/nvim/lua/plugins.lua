@@ -20,6 +20,12 @@ require('lazy').setup({
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   'neovim/nvim-lspconfig',
+  {
+    'linrongbin16/lsp-progress.nvim',
+    config = function()
+      require('lsp-progress').setup()
+    end
+  },
 
   -- LSP autocomplete completion sources
   'hrsh7th/nvim-cmp',

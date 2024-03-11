@@ -36,7 +36,7 @@ in
       qrencode
       reattach-to-user-namespace
       ripgrep
-      rustup
+#      rustup
       silver-searcher
       skim
       socat
@@ -103,7 +103,7 @@ in
       bindkey "^?" backward-delete-char
 
       # increase open file handle limit 
-      ulimit -n 2048
+      ulimit -n 4096
     '';
     shellAliases = {
       ".."      = "cd ..";

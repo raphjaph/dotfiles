@@ -110,9 +110,9 @@ require('tree-sitter-just').setup({})
 -- ==============================================================================
 -- LSP
 -- ==============================================================================
---
 require("mason").setup()
 require("mason-lspconfig").setup()
+require('lsp-progress').setup()
 
 local lsp = require('lspconfig')
 
@@ -267,7 +267,7 @@ require('lualine').setup({
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch', { 'filename', file_status = true, path = 1 }, 'diff' },
-    lualine_c = {},
+    lualine_c = { require('lsp-progress').progress },
   },
 })
 
