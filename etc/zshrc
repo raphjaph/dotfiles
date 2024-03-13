@@ -32,6 +32,10 @@ setopt inc_append_history
 
 PROMPT=$'\n%F{green}%m%f %B%F{cyan}%~%f%b\n> '
 
+# set PATH
+
+export PATH="$PATH:$HOME/bin:$HOME/go/bin:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin"
+
 eval "$(brew shellenv)"
 fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
 

@@ -21,8 +21,6 @@
         glob: true
         relink: true
         path: bin/*
-    ~/RectangleConfig.json: RectangleConfig.json
-    ~/Brewfile: Brewfile
     ~/.zshrc: etc/zshrc
     ~/.zsh:
         force: true
@@ -34,6 +32,6 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  # - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   - brew install just
   - just all

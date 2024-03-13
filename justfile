@@ -1,7 +1,7 @@
 all: formulae crates
 
 formulae:
-  brew bundle install --file=~/Brewfile
+  brew bundle install --file=Brewfile
 
 rustup:
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
