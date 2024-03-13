@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+git fetch --all
+
+git rebase origin/master
+
+git push --force atlantis atlantis:master
