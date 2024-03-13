@@ -21,6 +21,8 @@
         glob: true
         relink: true
         path: bin/*
+    ~/Library/LaunchAgents/com.raphjaph.bitcoin-signet.plist: com.raphjaph.bitcoin-signet.plist
+    ~/Library/LaunchAgents/com.raphjaph.bitcoin-testnet.plist: com.raphjaph.bitcoin-testnet.plist
     ~/.zshrc: etc/zshrc
     ~/.zsh:
         force: true
