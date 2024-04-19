@@ -39,6 +39,7 @@ export PATH="$PATH:$HOME/bin:$HOME/go/bin:$HOME/.cargo/bin:/usr/local/bin:/usr/l
 eval "$(brew shellenv)"
 fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
 
+autoload -Uz compinit && compinit
 #if type brew &>/dev/null; then
 #  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 #

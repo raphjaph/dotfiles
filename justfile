@@ -24,10 +24,3 @@ crates:
   cargo install cargo-watch
   cargo install nvim-send
   cargo install stylua
-
-# Not used anymore
-home-manager:
-  nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
-  nix-channel --update
-  nix run home-manager/release-23.05 -- init --switch
-  home-manager switch

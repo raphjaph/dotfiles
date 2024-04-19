@@ -35,5 +35,5 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   # - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  - brew install just
-  - just all
+  # - brew install just
+  # - just all
