@@ -13,7 +13,7 @@ local config = home .. '/.config/nvim'
 local cmd = vim.cmd
 
 opt('o', 'termguicolors', true)
-vim.cmd('colorscheme PaperColor')
+vim.cmd('colorscheme PaperColorSlim')
 vim.cmd('syntax on')
 
 opt('g', 'mapleader', ' ')

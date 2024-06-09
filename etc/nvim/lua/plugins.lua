@@ -16,6 +16,9 @@ vim.opt.rtp:prepend(lazypath)
 opt('g', 'mapleader', ' ')
 
 require('lazy').setup({
+  -- Paper Color
+  'pappasam/papercolor-theme-slim',
+
   -- LSP
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
