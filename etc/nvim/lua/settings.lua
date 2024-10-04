@@ -141,8 +141,7 @@ local servers = {
   'cssls',
   'pyright',
   'rust_analyzer',
-  'tsserver',
-  -- 'svelteserver',
+  'ts_ls',
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -271,7 +270,6 @@ require('lualine').setup({
     lualine_c = { require('lsp-progress').progress },
   },
 })
-
 
 -- =============================================================================
 -- Startify

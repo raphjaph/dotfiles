@@ -49,6 +49,9 @@ opt('o', 'ttyfast', true)
 opt('o', 'undofile', true)
 opt('o', 'visualbell', true)
 opt('o', 'wildmode', 'longest,list,full')
+opt('o', 'laststatus', 3)
+opt('o', 'splitkeep', 'screen')
+
 
 vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
 vim.api.nvim_create_autocmd("User", {

@@ -98,4 +98,20 @@ require('lazy').setup({
 
   -- Cool start screen
   'mhinz/vim-startify',
+
+  -- AI
+  --{
+  --  "yetone/avante.nvim",
+  --  event = "VeryLazy",
+  --  build = "make",
+  --  opts = {
+  --    -- add any opts here
+  --  },
+  --  dependencies = {
+  --    "nvim-tree/nvim-web-devicons",
+  --    "stevearc/dressing.nvim",
+  --    "nvim-lua/plenary.nvim",
+  --    "MunifTanjim/nui.nvim",
+  --  },
+  --},
 })

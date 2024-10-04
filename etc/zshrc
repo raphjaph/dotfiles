@@ -2,6 +2,10 @@
 unalias -m '*'
 source ~/.zsh/aliases.zsh
 
+## to build rust wasm
+AR=/opt/homebrew/opt/llvm/bin/llvm-ar
+CC=/opt/homebrew/opt/llvm/bin/clang
+
 ## zsh plugins
 source ~/.zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
