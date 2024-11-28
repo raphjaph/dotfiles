@@ -154,7 +154,9 @@ for _, server in ipairs(servers) do
     capabilities = capabilities,
     settings = {
       [server] = {
-        diagnostics = { disabled = { 'inactive-code' } },
+        diagnostics = {
+          disabled = { 'inactive-code' },
+        },
       },
     },
   })

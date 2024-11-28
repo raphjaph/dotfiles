@@ -6,4 +6,4 @@ git fetch --all
 
 git rebase origin/master
 
-git push --force atlantis atlantis:master
+git push --force
