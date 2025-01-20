@@ -10,7 +10,7 @@ map(
   { noremap = true, silent = true }
 )
 map('n', '<LEADER>gr', '<CMD>Telescope live_grep<CR>')
-map('n', '<LEADER>ff', '<CMD>Telescope find_files<CR>')
+map('n', '<LEADER>ff', '<CMD>Telescope find_files hidden=true<CR>')
 map('n', '<LEADER>sb', '<CMD>Telescope buffers<CR>')
 map('n', '<LEADER>ss', ':source %<CR>')
 map('n', '<LEADER>sv', ':luafile ' .. config .. '/init.lua<CR>')

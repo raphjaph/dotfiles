@@ -73,7 +73,7 @@ export FZF_DEFAULT_OPTS='
 bindkey "^?" backward-delete-char
 
 # increase open file handle limit 
-ulimit -n 2048
+ulimit -n 1024
 
 #man () {
 #	env \
