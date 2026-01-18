@@ -33,6 +33,7 @@ alias ls='ls -G'
 alias lv="nvim -c \"normal '0\" -c bd1"
 alias man='colorful_man'
 alias o='open .'
+alias oc='opencode'
 alias p='python -q'
 alias qr='qrencode -t ansiutf8'
 alias rap='return_and_pop.sh'

@@ -99,7 +99,12 @@ require('lazy').setup({
   -- Cool start screen
   'mhinz/vim-startify',
 
-  -- AI
+  -- Nice animations for renaming
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
+  },
+
   --{
   --  "yetone/avante.nvim",
   --  event = "VeryLazy",

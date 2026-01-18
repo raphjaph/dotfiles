@@ -115,22 +115,29 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 require('lsp-progress').setup()
 
-local lsp = require('lspconfig')
+-- LSP keymaps (set up via LspAttach autocommand)
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client then
+      client.server_capabilities.semanticTokensProvider = nil -- disable semantic highlighting
+    end
 
-local on_attach = function(client)
-  map('n', 'gD', '<CMD>lua vim.lsp.buf.declaration()<CR>')
-  map('n', 'gd', '<CMD>lua vim.lsp.buf.definition()<CR>')
-  map('n', 'gi', '<CMD>lua vim.lsp.buf.implementation()<CR>')
-  map('n', 'gr', '<CMD>Telescope lsp_references<cr>')
-  map('n', 'gy', '<CMD>lua vim.lsp.buf.type_definition()<CR>')
-  map('n', 'K', '<CMD>lua vim.lsp.buf.hover()<CR>')
-  map('n', '<C-k>', '<CMD> lua vim.lsp.buf.signature_help()<CR>')
-  map('n', '<LEADER>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-  map('n', '<SPACE>aa', '<CMD>lua vim.lsp.buf.code_action()<CR>')
-  map('n', '<LEADER>=', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>')
-  map('n', '<SPACE>tt', '<CMD>lua toggle_completion()<CR>')
-  client.server_capabilities.semanticTokensProvider = nil -- disable semantic highlighting
-end
+    map('n', 'gD', '<CMD>lua vim.lsp.buf.declaration()<CR>')
+    map('n', 'gd', '<CMD>lua vim.lsp.buf.definition()<CR>')
+    map('n', 'gi', '<CMD>lua vim.lsp.buf.implementation()<CR>')
+    map('n', 'gr', '<CMD>Telescope lsp_references<cr>')
+    map('n', 'gy', '<CMD>lua vim.lsp.buf.type_definition()<CR>')
+    map('n', 'K', '<CMD>lua vim.lsp.buf.hover()<CR>')
+    map('n', '<C-k>', '<CMD> lua vim.lsp.buf.signature_help()<CR>')
+    map('n', '<LEADER>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+    map('n', '<SPACE>aa', '<CMD>lua vim.lsp.buf.code_action()<CR>')
+    map('n', '<LEADER>=', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>')
+    map('n', '<SPACE>tt', '<CMD>lua toggle_completion()<CR>')
+  end,
+})
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local servers = {
   'clangd',
@@ -144,13 +151,9 @@ local servers = {
   'ts_ls',
 }
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-lsp.htmx.setup {}
-
+-- Configure LSP servers using vim.lsp.config (Neovim 0.11+)
 for _, server in ipairs(servers) do
-  lsp[server].setup({
-    on_attach = on_attach,
+  vim.lsp.config[server] = {
     capabilities = capabilities,
     settings = {
       [server] = {
@@ -159,8 +162,11 @@ for _, server in ipairs(servers) do
         },
       },
     },
-  })
+  }
 end
+
+-- Enable all configured servers
+vim.lsp.enable(servers)
 
 -- ==============================================================================
 -- Luasnip
@@ -272,6 +278,7 @@ require('lualine').setup({
     lualine_c = { require('lsp-progress').progress },
   },
 })
+
 
 -- =============================================================================
 -- Startify
