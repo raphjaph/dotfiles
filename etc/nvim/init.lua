@@ -66,24 +66,25 @@ vim.api.nvim_exec(
 "             Functions                      "
 """"""""""""""""""""""""""""""""""""""""""""""
 
-function! g:CargoLimitOpen(result)
+fun! g:CargoLimitUpdate(editor_data) abort
   let l:winnr = winnr()
-
   let l:quickfix_is_open = QuickfixIsOpen()
 
   cgetexpr []
-  for file in a:result['files']
-    caddexpr file['path'].':'.file['line'].':'.file['column'].':'.file['message']
+  for l:location in a:editor_data.locations
+    caddexpr l:location.path . ':' . l:location.line . ':' . l:location.column . ':' . l:location.message
   endfor
 
-  if !l:quickfix_is_open
+  if empty(a:editor_data.locations)
+    cclose
+  elseif !l:quickfix_is_open
     cclose
   endif
 
   if l:winnr !=# winnr()
     wincmd p
   endif
-endfunction
+endf
 
 function! QuickfixIsOpen()
   for n in range(1, winnr('$'))
