@@ -123,17 +123,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
       client.server_capabilities.semanticTokensProvider = nil -- disable semantic highlighting
     end
 
-    map('n', 'gD', '<CMD>lua vim.lsp.buf.declaration()<CR>')
-    map('n', 'gd', '<CMD>lua vim.lsp.buf.definition()<CR>')
-    map('n', 'gi', '<CMD>lua vim.lsp.buf.implementation()<CR>')
-    map('n', 'gr', '<CMD>Telescope lsp_references<cr>')
-    map('n', 'gy', '<CMD>lua vim.lsp.buf.type_definition()<CR>')
-    map('n', 'K', '<CMD>lua vim.lsp.buf.hover()<CR>')
-    map('n', '<C-k>', '<CMD> lua vim.lsp.buf.signature_help()<CR>')
-    map('n', '<LEADER>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-    map('n', '<SPACE>aa', '<CMD>lua vim.lsp.buf.code_action()<CR>')
-    map('n', '<LEADER>=', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>')
-    map('n', '<SPACE>tt', '<CMD>lua toggle_completion()<CR>')
+    local bufnr = args.buf
+    local opts = { buffer = bufnr, noremap = true, silent = true }
+
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', 'gr', '<CMD>Telescope lsp_references<cr>', opts)
+    vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<LEADER>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set('n', '<SPACE>aa', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', '<LEADER>=', function() vim.lsp.buf.format({ async = true }) end, opts)
+    vim.keymap.set('n', '<SPACE>tt', toggle_completion, opts)
   end,
 })
 
